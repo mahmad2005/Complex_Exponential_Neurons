@@ -1,7 +1,7 @@
 t = -2*pi:0.001:2*pi;
 
-Omega_1 = 1; Theta_1 = log(0.5); Phi_1 = pi/2;
-Omega_2 = 3; Theta_2 = log(0.5); Phi_2 = pi/2;
+Omega_1 = 3; Theta_1 = log(0.5); Phi_1 = pi/4;
+Omega_2 = 2.3; Theta_2 = log(0.5); Phi_2 = pi/4;
 
 
 E1 = exp((1i*Omega_1.*t)+Theta_1);
@@ -21,3 +21,8 @@ figure;
 plot(t,E2);
 figure;
 polarplot(E);
+
+figure;
+fftE = fft(S);
+fftE = abs(fftE);
+plot(t(1:20),fftE(1:20));
